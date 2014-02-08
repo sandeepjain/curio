@@ -1,0 +1,60 @@
+/* Put your general styles. one's that doesn't fit in any module */
+
+* {
+    .box-sizing(border-box);
+}
+
+body {
+    font-family: Lato, sans-serif;
+    /*padding: 32px 0 51px;*/
+    padding: 32px 0 0;
+    &.page-home {
+        padding: 0;
+    }
+}
+
+.container {
+    max-width: @maxSiteWidth;
+    margin: 0 auto;
+    padding: 0px 20px;
+}
+
+.home {
+    text-align: center;
+    h1 {
+        font-size: 120px;
+        line-height: 160px;
+        padding: 40px 0 10px;
+        margin: 0;
+//        font-weight: normal;
+        text-transform: uppercase;
+        color: #29D;
+    }
+    h2 {
+        color: #aaa;
+        font-weight: normal;
+        margin: 0 0 60px;
+        font-size: 20px;
+    }
+    .pure-button:first-child {
+        margin-right: 40px;
+    }
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #B7B7B7;
+    background-color: #fff;
+    color: #aaa;
+    text-align: center;
+    a {
+        color: #aaa;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+        <base href="/" />
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- syntax highlighting CSS -->
+        <link rel="stylesheet" href="/css/stylesheet.css">
+
+    </head>
+    <body class="{% if page.ishome == true %}page-home{% endif %}">
+
+    {% if page.ishome != true %}
+    <div class="header">
+        <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+            <a class="pure-menu-heading" href="">{{ site.name }}</a>
+
+            <!--<ul>-->
+                <!--<li class="pure-menu-selected"><a href="#">Home</a></li>-->
+                <!--<li><a href="#">Tour</a></li>-->
+                <!--<li><a href="#">Sign Up</a></li>-->
+            <!--</ul>-->
+        </div>
+    </div>
+    {% endif %}
+
+    {{ content }}
+
+  {% if page.ishome != true %}
+  <div class="footer">
+    <div class="container contact">
+<!--
+      <p>Contact me on <a href="https://github.com/sandeepjain">github</a>
+        or @<a href="https://twitter.com/sandeepjain">sandeepjain</a><br />
+      </p>
+-->
+    </div>
+  </div>
+  {% endif %}
+  {% if page.isDemo1 %}
+        <script type="text/javascript" src="/js/curio.js"></script>
+<script>
+(function () {
+
+curio('#content-nav', {
+    // show contents fetched from ajax in this div
+    elContent: '#content',
+
+    // keep history. so that back and forward buttons work as expected
+    history: true,
+
+    // [optional] render callback
+    onRender: function (el) {
+
+        // for smooth scrolling to top of the page
+        function scrollTo(element, to, duration) {
+            if (duration <= 0) return;
+            var difference = to - element.scrollTop;
+            var perTick = difference / duration * 5;
+
+            setTimeout(function() {
+                element.scrollTop = element.scrollTop + perTick;
+                scrollTo(element, to, duration - 5);
+            }, 5);
+        }
+
+        scrollTo(document.body, 0, 200);
+    }
+});
+
+ })();
+</script>
+  {% endif %}
+    </body>
+</html>

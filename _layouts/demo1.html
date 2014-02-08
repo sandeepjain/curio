@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<div class="splash-container" id="content">
+    {{ content }}
+</div>
+<div class="puffs-wrap" id="content-nav">
+    <div class="container">
+        <div class="pure-g-r">
+            <a class="pure-u-1-3 puff" href="demo1" data-ajaxhref="demo1/ajax/data1.txt">
+                <img src="demo1/images/1_small.jpg">
+                <span class="puff-bar">Green Grass</span>
+            </a>
+            <a class="pure-u-1-3 puff" href="demo1/ajax/data2.html" data-ajaxhref="demo1/ajax/data2.txt">
+                <img src="demo1/images/2_small.jpg">
+                <span class="puff-bar">Rising Sun</span>
+            </a>
+            <a class="pure-u-1-3 puff" href="demo1/ajax/data3.html" data-ajaxhref="demo1/ajax/data3.txt">
+                <img src="demo1/images/3_small.jpg">
+                <span class="puff-bar">Cyclist</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="demo1-code">
+{%  highlight javascript %}
+// Source Code
+
+curio('#content-nav', {
+    // show contents fetched from ajax in this div
+    elContent: '#content',
+
+    // keep history. so that back and forward buttons work as expected
+    history: true,
+
+    // on render callback
+    onRender: function (el) {
+
+        // for smooth scrolling to top of the page
+        function scrollTo(element, to, duration) {
+            if (duration <= 0) return;
+            var difference = to - element.scrollTop;
+            var perTick = difference / duration * 5;
+
+            setTimeout(function() {
+                element.scrollTop = element.scrollTop + perTick;
+                scrollTo(element, to, duration - 5);
+            }, 5);
+        }
+
+        scrollTo(document.body, 0, 200);
+    }
+});
+{% endhighlight %}
+</div>

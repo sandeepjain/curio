@@ -1,0 +1,32 @@
+.puffs-wrap {
+    background-color: #F7F7F7;
+    padding: 60px 0;
+}
+
+.puff {
+    position: relative;
+    padding: 0 10px 38px;
+    margin-bottom: 20px;
+    .transition(all 0.2s linear);
+    img {
+        display: block;
+    }
+    &:hover, &.active {
+        .transform(translateY(-10px));
+        .puff-bar {
+        	.box-shadow(0 7px 7px -7px #999);
+        }
+    }
+}
+
+.puff-bar {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    display: block;
+    padding: 10px 20px;
+    color: #000;
+    background-color: rgba(255, 255, 255, 1);
+    .transition(all 0.2s linear);
+}
