@@ -1,0 +1,14 @@
+{
+  "name": "Curio Website",
+  "meaning": "a small and unusual object that is considered interesting or attractive, and comes from shortening the word curiosity Read more at http://www.merriam-webster.com/trend-watch/2013/09/20/#LmkiJ44IUfVoCgPJ.99",
+  "version": "1.0.0",
+  "description": "Easily load content using AJAX in specified container.",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-less": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "css-parse": "~1.5.3",
+    "grunt-combine-media-queries": "~1.0.9",
+    "grunt-contrib-cssmin": "~0.7.0"
+  }
+}
