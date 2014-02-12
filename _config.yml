@@ -2,5 +2,5 @@ name: Curio
 markdown: redcarpet
 pygments: true
 exclude: [node_modules]
-url: http://localhost:4000/
-#url: http://sandeepjain.github.io/curio/
+#url: http://localhost:4000/
+url: http://sandeepjain.github.io/curio/
