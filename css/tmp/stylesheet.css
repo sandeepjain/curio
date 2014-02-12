@@ -1737,6 +1737,7 @@ p {
 	margin: 0;
 	text-transform: uppercase;
 	color: #29D;
+	border-bottom: 0 none;
 }
 
 .home h2 {
@@ -1744,6 +1745,8 @@ p {
 	font-weight: normal;
 	margin: 0 0 60px;
 	font-size: 20px;
+	border-bottom: 0 none;
+	padding-bottom: 0;
 }
 
 .home .pure-button:first-child {
