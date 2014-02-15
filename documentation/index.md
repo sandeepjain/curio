@@ -84,7 +84,9 @@ Specify this option to enable using History API.
 Called before making AJAX request.
 {%  highlight js %}
 {
-    history: true
+    beforeFetch: function () {
+        // some animation before initiating AJAX request.
+    }
 }
 {% endhighlight %}
 
@@ -92,7 +94,9 @@ Called before making AJAX request.
 Called immediately when content is rendered.
 {%  highlight js %}
 {
-    history: true
+    onRender: function () {
+        // some animation post rendering
+    }
 }
 {% endhighlight %}
 

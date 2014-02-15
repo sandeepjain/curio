@@ -51,12 +51,10 @@ module.exports = function(grunt) {
     },
   });
 
-
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-combine-media-queries');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
-
 
   grunt.registerTask('watchless', ['watch:less']);
 

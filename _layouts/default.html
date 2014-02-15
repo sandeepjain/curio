@@ -23,10 +23,10 @@
     {% endif %}
 
     {{ content }}
-
-  {% if page.ishome != true %}
+  {% if page.ishome == true %}
   <div class="footer">
     <div class="container contact">
+        <p><a href="documentation/">Documentation</a></p>
     </div>
   </div>
   {% endif %}
