@@ -57,18 +57,27 @@
             elActive = false,
             linkSelector = '[href]';
 
-        function changeContent(event) {
-            var actualHref = this.href,
+        function changeContent(e) {
+            var actualHref,
+                href;
+
+            if (!e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey) {
+                e.preventDefault();
+
+                actualHref = this.href;
                 href = this.getAttribute('data-ajaxhref') || actualHref;
 
-            if (keepHistory) {
-                window.history.pushState({ elurl: actualHref || href }, document.title, actualHref || href);
-            }
-            elActive && removeClass(elActive, 'active');
-            elActive = this;
+                elActive && removeClass(elActive, 'active');
+                elActive = this;
 
-            beforeFetch();
-            getContent(href);
+                if (keepHistory) {
+                    window.history.pushState({ elurl: actualHref || href }, document.title, actualHref || href);
+                }
+
+                beforeFetch();
+                getContent(href);
+                return false;
+            }
         }
 
         function getContent(url) {
@@ -161,9 +170,7 @@
             }
             // if required element clicked
             if( target && target !== this ) {
-                event.preventDefault();
-                changeContent.call(target, event);
-                return false;
+                return changeContent.call(target, event);
             }
         }, false);
 

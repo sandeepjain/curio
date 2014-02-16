@@ -3,4 +3,4 @@
 
 > Awesome AJAX content loader.
 
-[DEMO](http://sandeepjain.github.io/curio/demo1)
+[Demo](http://sandeepjain.github.io/curio/demo1)
