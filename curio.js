@@ -71,7 +71,7 @@
                 elActive = this;
 
                 if (keepHistory) {
-                    window.history.pushState({ elurl: actualHref || href }, document.title, actualHref || href);
+                    window.history.pushState({ elurl: href }, document.title, actualHref || href);
                 }
 
                 beforeFetch();
